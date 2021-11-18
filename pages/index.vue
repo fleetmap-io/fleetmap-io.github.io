@@ -7,7 +7,7 @@ import {Auth} from "@aws-amplify/auth";
 export default {
   async mounted() {
     try {
-      await Auth.currentAuthenticatedUser()
+      await Auth.currentSession()
       window.location.href='https://nogartel.fleetmap.io'
     } catch(e) {
       console.error(e)
