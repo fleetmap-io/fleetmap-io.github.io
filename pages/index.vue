@@ -12,16 +12,7 @@ export default {
     } catch(e) {
       console.error(e)
     }
-    switch (window.location.hostname) {
-      case 'fleetmap-io.github.io':
-        window.location.href='https://fleetmap.freshdesk.com'
-        break
-      case 'nogartel.fleetmap.io':
-        window.location.href='https://nogartel.inofleet.com'
-        break
-      default:
-        break
-    }
+    window.location.href='https://nogartel.inofleet.com'
   }
 }
 </script>
