@@ -12,7 +12,6 @@ export default {
     } catch(e) {
       console.error(e)
     }
-
     switch (window.location.hostname) {
       case 'fleetmap-io.github.io':
         window.location.href='https://fleetmap.freshdesk.com'
