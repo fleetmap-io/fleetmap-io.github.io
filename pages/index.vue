@@ -20,22 +20,30 @@ export default {
     return {
       user:'',
       pass:'',
-      loading: false
+      loading: false,
+      migrated: []
     }
   },
   methods: {
     async login() {
       this.loading = true
-      const r = await this.$axios.$post(
-          'https://h10sd4316i.execute-api.us-east-1.amazonaws.com/Prod/',
-          {username: this.user, password: this.pass})
-      const s = r[0].AuthenticateResult
-      if (s.length) {
-        window.location.href ='https://nogartel.inofleet.com/?sessionid='+s
+      if (this.migrated.find(u => u === this.user) || this.user.includes('@') || this.user.includes('+'))  {
+        window.location.href = 'https://nogartel.fleetmap.io'
       } else {
-        this.loading = false
+        const r = await this.$axios.$post(
+            'https://h10sd4316i.execute-api.us-east-1.amazonaws.com/Prod/',
+            {username: this.user, password: this.pass})
+        const s = r[0].AuthenticateResult
+        if (s.length) {
+          window.location.href = 'https://nogartel.inofleet.com/?sessionid=' + s
+        } else {
+          this.loading = false
+        }
       }
     }
+  },
+  async created() {
+    this.migrated = await this.$axios.$get('https://h10sd4316i.execute-api.us-east-1.amazonaws.com/Prod/')
   },
   async mounted() {
     try {
