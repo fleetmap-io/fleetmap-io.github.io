@@ -4,12 +4,10 @@
       <div class="login-logo" style="background: url('https://partners-homepage.s3.amazonaws.com/24/logo.png'); background-size: 250px ;background-repeat: no-repeat; background-position: center;height: 100px;width:340px;"></div>
       <input type="text" v-model="user" placeholder="Usuário" id="username" name="username"/>
       <input type="password" v-model="pass" placeholder="Palavra chave" id="password" name="password"/>
-      <input class="login-button" id="loginbtn2" type="submit" value="Login" @click="login"/>
-    </form>
-
-    <form id="loginformv6index" class="form_login" action="//index.jsp" method="post" name="loginformv6index" style="display:none">
-      <p><input id="sessionid" class="input" name="sessionid" size="20" type="text" value=""></p>
-      <p class="submit"><input id="wp-submit" class="button button-primary button-large" type="submit" value="Submeter Pedido"></p>
+      <input type="button" class="login-button" id="loginbtn2" value="Login" @click="login"/>
+      <div class="inputcontainer" v-if="loading">
+        <i class="loader"></i>
+      </div>
     </form>
   </div>
 </template>
@@ -21,18 +19,22 @@ export default {
   data() {
     return {
       user:'',
-      pass:''
+      pass:'',
+      loading: false
     }
   },
   methods: {
     async login() {
-      const formData = new FormData();
-      formData.append('username', this.user)
-      formData.append('password', this.password)
-      await this.$axios.$post('https://nogartel.inofleet.com/inofleetws/core/authenticate',formData, {
-        headers:{
-          'Content-Type':'multipart/form-data'
-      }})
+      this.loading = true
+      const r = await this.$axios.$post(
+          'https://h10sd4316i.execute-api.us-east-1.amazonaws.com/Prod/',
+          {username: this.user, password: this.pass})
+      const s = r[0].AuthenticateResult
+      if (s.length) {
+        window.location.href ='https://nogartel.inofleet.com/?sessionid='+s
+      } else {
+        this.loading = false
+      }
     }
   },
   async mounted() {
@@ -46,3 +48,55 @@ export default {
   }
 }
 </script>
+
+<style>
+
+.inputcontainer {
+  position: relative;
+}
+
+input {
+  width: 100%;
+  font-size: 20px;
+  box-sizing: border-box;
+}
+
+.loader {
+  position: relative;
+  height: 20px;
+  width: 20px;
+  display: inline-block;
+  animation: around 5.4s infinite;
+}
+
+@keyframes around {
+  0% {
+    transform: rotate(0deg)
+  }
+  100% {
+    transform: rotate(360deg)
+  }
+}
+
+.loader::after, .loader::before {
+  content: "";
+  background: white;
+  position: absolute;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  border-width: 2px;
+  border-color: #333 #333 transparent transparent;
+  border-style: solid;
+  border-radius: 20px;
+  box-sizing: border-box;
+  top: 0;
+  left: 0;
+  animation: around 0.7s ease-in-out infinite;
+}
+
+.loader::after {
+  animation: around 0.7s ease-in-out 0.1s infinite;
+  background: transparent;
+}
+</style>
