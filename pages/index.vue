@@ -27,9 +27,18 @@ export default {
   methods: {
     async login() {
       this.loading = true
-      if (this.migrated.find(u => u === this.user) || this.user.includes('@') || this.user.includes('+'))  {
+      if (this.migrated.find(u => u === this.user))  {
         window.location.href = 'https://nogartel.fleetmap.io'
-      } else {
+      }
+      else if (this.user.includes('@') || this.user.includes('+')) {
+        try {
+          await Auth.signIn(this.user, this.pass)
+        } catch(e) {
+          console.error(e)
+        }
+        window.location.href = 'https://nogartel.fleetmap.io'
+      }
+      else {
         const r = await this.$axios.$post(
             'https://h10sd4316i.execute-api.us-east-1.amazonaws.com/Prod/',
             {username: this.user, password: this.pass})
