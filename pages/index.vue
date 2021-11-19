@@ -8,7 +8,9 @@
       <div class="inputcontainer" v-if="loading">
         <i class="loader"></i>
       </div>
+      <google-button />
     </form>
+
   </div>
 </template>
 
