@@ -11,6 +11,7 @@
     "@aws-amplify/auth": "^4.3.15",
     "@aws-amplify/core": "^4.3.7",
     "@nuxtjs/axios": "^5.13.6",
+    "axios": "^0.24.0",
     "nuxt": "^2.15.8"
   }
 }
