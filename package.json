@@ -1,6 +1,6 @@
 {
   "name": "login-redirect",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",

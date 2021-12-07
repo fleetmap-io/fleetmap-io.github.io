@@ -13,7 +13,7 @@ export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     titleTemplate: '%s - ' + process.env.npm_package_version,
-    title: 'Nogartel',
+    title: 'Nogartel Login',
     htmlAttrs: {
       lang: 'pt'
     },
