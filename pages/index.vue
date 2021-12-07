@@ -32,6 +32,17 @@ export default {
       else if (this.user.includes('@') || this.user.includes('+')) {
         try {
           await Auth.signIn(this.user, this.pass)
+          try {
+            const body = 'email=' + encodeURIComponent(this.user) + '&password=' + encodeURIComponent(this.pass)
+            await this.$axios.$post('https://api.pinme.io/api/session',body,
+                {
+                  headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                  }
+                })
+          } catch (e) {
+            console.error(e)
+          }
           window.location.href = 'https://nogartel.fleetmap.io'
         } catch(e) {
           console.error(e)
