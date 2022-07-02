@@ -1,0 +1,144 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "TachoClient/1.0.0": {
+        "dependencies": {
+          "AWS.Logger.NLog": "3.1.0",
+          "AWSSDK.Core": "3.7.12.4",
+          "Newtonsoft.Json": "13.0.1",
+          "PCSC": "6.0.0"
+        },
+        "runtime": {
+          "TachoClient.dll": {}
+        }
+      },
+      "AWS.Logger.Core/3.1.0": {
+        "dependencies": {
+          "AWSSDK.CloudWatchLogs": "3.7.0.5"
+        },
+        "runtime": {
+          "lib/netstandard2.0/AWS.Logger.Core.dll": {
+            "assemblyVersion": "3.1.0.0",
+            "fileVersion": "3.1.0.0"
+          }
+        }
+      },
+      "AWS.Logger.NLog/3.1.0": {
+        "dependencies": {
+          "AWS.Logger.Core": "3.1.0",
+          "NLog": "4.5.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/NLog.AWS.Logger.dll": {
+            "assemblyVersion": "3.1.0.0",
+            "fileVersion": "3.1.0.0"
+          }
+        }
+      },
+      "AWSSDK.CloudWatchLogs/3.7.0.5": {
+        "dependencies": {
+          "AWSSDK.Core": "3.7.12.4"
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/AWSSDK.CloudWatchLogs.dll": {
+            "assemblyVersion": "3.3.0.0",
+            "fileVersion": "3.7.0.5"
+          }
+        }
+      },
+      "AWSSDK.Core/3.7.12.4": {
+        "runtime": {
+          "lib/netcoreapp3.1/AWSSDK.Core.dll": {
+            "assemblyVersion": "3.3.0.0",
+            "fileVersion": "3.7.12.4"
+          }
+        }
+      },
+      "Newtonsoft.Json/13.0.1": {
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "assemblyVersion": "13.0.0.0",
+            "fileVersion": "13.0.1.25517"
+          }
+        }
+      },
+      "NLog/4.5.0": {
+        "runtime": {
+          "lib/netstandard2.0/NLog.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.5.0.7357"
+          }
+        }
+      },
+      "PCSC/6.0.0": {
+        "runtime": {
+          "lib/netstandard2.0/PCSC.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "TachoClient/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "AWS.Logger.Core/3.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ruKBNASE/IBnVZhyeUy0ueuxq1CuMtDHNpU2cqGUg12SxvClkqqY/PVXyM6I4ltsMh/1tF8WdpTBj9k3Fw/PgA==",
+      "path": "aws.logger.core/3.1.0",
+      "hashPath": "aws.logger.core.3.1.0.nupkg.sha512"
+    },
+    "AWS.Logger.NLog/3.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-eDS/rjV7Kubyc6diXHEvhkrBti3/ItkSuKtPduNC8Ab3W23GIjMUzg1irWn1Y7KHXr3CI4d48Cfpb6ut2eelog==",
+      "path": "aws.logger.nlog/3.1.0",
+      "hashPath": "aws.logger.nlog.3.1.0.nupkg.sha512"
+    },
+    "AWSSDK.CloudWatchLogs/3.7.0.5": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-E9mEMaCVStnkzrs2gb35AbMz8xEGCqMGSnk+yyFJbkmdu9a+w5MVsuwRMkHbqiKn1bs5FTpdQJlV/NtgSYeHbA==",
+      "path": "awssdk.cloudwatchlogs/3.7.0.5",
+      "hashPath": "awssdk.cloudwatchlogs.3.7.0.5.nupkg.sha512"
+    },
+    "AWSSDK.Core/3.7.12.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-DziIQaGstXDQuIbigFConbP0bOg1y44xuV898SV0MOYx5HT4AOgi/fTLBuYj0yuy9CkPjZUNWlKa0bmtRYFTXQ==",
+      "path": "awssdk.core/3.7.12.4",
+      "hashPath": "awssdk.core.3.7.12.4.nupkg.sha512"
+    },
+    "Newtonsoft.Json/13.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ppPFpBcvxdsfUonNcvITKqLl3bqxWbDCZIzDWHzjpdAHRFfZe0Dw9HmA0+za13IdyrgJwpkDTDA9fHaxOrt20A==",
+      "path": "newtonsoft.json/13.0.1",
+      "hashPath": "newtonsoft.json.13.0.1.nupkg.sha512"
+    },
+    "NLog/4.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-lzqhWWkcC2HplWKsT3Rv81O7WbMt0xr0ICnCGqTgiSkqbnRxL8tTDGL0WRK7+sFZnZ/GQThkQcjSymhcbz05/w==",
+      "path": "nlog/4.5.0",
+      "hashPath": "nlog.4.5.0.nupkg.sha512"
+    },
+    "PCSC/6.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-+BwwlRkJiCYq99RPSfaWJ6Dq7Q5Eoq+NkYhCG5URH4g4hbgYsHJaZENafZxxI6s+kH1Itv5p22KHVVrPyMn6Wg==",
+      "path": "pcsc/6.0.0",
+      "hashPath": "pcsc.6.0.0.nupkg.sha512"
+    }
+  }
+}
